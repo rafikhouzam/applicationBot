@@ -4,21 +4,21 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 import time
 
-ACCOUNT_EMAIL = "rafi.nashed@me.com"
-ACCOUNT_PASSWORD = "Khouzam$$27"
-PHONE = "7323061346"
+ACCOUNT_EMAIL = "EMAIL"
+ACCOUNT_PASSWORD = "PASSWORD"
+PHONE = "PHONENUMBER"
 
 def abort_application():
-    # Click Close Button
+    # click Close Button
     close_button = driver.find_element(by=By.CLASS_NAME, value="artdeco-modal__dismiss")
     close_button.click()
 
     time.sleep(2)
-    # Click Discard Button
+    # click Discard Button
     discard_button = driver.find_elements(by=By.CLASS_NAME, value="artdeco-modal__confirm-dialog-btn")[1]
     discard_button.click()
 
-# Optional - Keep the browser open if the script crashes.
+# keep the browser open if the script crashes.
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
@@ -33,7 +33,7 @@ driver.get(
     "&redirect=false&position=1&pageNum=0"
 )
 
-# Click Reject Cookies Button
+# Reject Cookies
 time.sleep(2)
 reject_button = driver.find_element(by=By.CSS_SELECTOR, value='button[action-type="DENY"]')
 reject_button.click()
